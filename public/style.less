@@ -1,0 +1,199 @@
+@default_font_family: Arial, sans-serif;
+@default_body_color: #1f1f1c;
+@default_headers_color: #090909;
+@default_transition: .2s ease-in-out;
+@default_link_color: #fdcf00;
+@default_link_hover_color:#f5f5f5;
+@default_border_width: 1px;
+@default_border_type: solid;
+@default_border_radius: 10px;
+
+body {
+    max-width: 1440px;
+    margin: 0 auto;
+    font-family: @default_font_family;
+    color: @default_body_color;
+    padding: 1em;
+    font-size: 1.05em;
+}
+
+h1, h2, h3, h4, h5, h6  {
+    color: @default_headers_color;
+    margin: .15em 0 .75em;
+}
+
+p{
+    margin: .15em 0 1em;
+}
+
+hr{
+    color: @default_link_hover_color;
+    margin: 3em 0;
+}
+
+a, a:visited{
+    transition: @default_transition;
+    color: @default_link_color;
+    text-decoration: underline;
+    cursor: pointer;
+    &:hover{
+        color: @default_link_hover_color;
+        transition: @default_transition;
+    }
+}
+
+.btn{
+    width: max-content;
+    border: @default_border_width @default_border_type @default_link_color;
+    border-radius: calc(@default_border_radius / 2);
+    background-color: @default_link_color;
+    color: @default_body_color;
+    padding: 8px 15px;
+    font-weight: 900;
+    letter-spacing: .03em;
+    cursor: pointer;
+    transition: @default_transition;
+    &:hover, &:focus{
+        background-color: @default_link_hover_color;
+        transition: @default_transition;
+    }
+}
+
+.section{
+    display: flex;
+    gap: 1em;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: max-content;
+    min-width: 300px;
+    max-width: 350px;
+    padding: 2em;
+    background-color: @default_link_hover_color;
+    border-radius: @default_border_radius;
+    margin-bottom: 2em;
+
+    & label{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+input, select{
+    background-color: #FFF;
+    border: @default_border_width @default_border_type #dadada;
+    border-radius: calc(@default_border_radius / 2);
+    padding: 5px 15px;
+    font-size: 16px;
+    transition: @default_transition;
+}
+
+table{
+    tr{
+        &:not(:last-child) th, &:not(:last-child) td{
+            border-bottom: 1px solid #dadada;
+        }
+        & th, & td{
+            text-align: center;
+            padding: .5em;
+            &:not(:last-child){
+                border-right: 1px solid #dadada;
+            }
+            &.pwa_table_remove_row{
+                cursor: pointer;
+                color: #ff0000;
+                font-weight: 900;
+                &:hover{
+                    color: #FFF;
+                    background-color: #ff0000;
+                }
+            }
+        }
+    }
+}
+
+.pwa_app_login_form_wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    flex-wrap: wrap;
+    min-height: calc(100vh - 2em);
+}
+
+.pwa_app_logout{
+    color: orangered;
+    font-size: 16px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+    transition: @default_transition;
+    &:hover, &:focus{
+        text-decoration: underline;
+        transition: @default_transition;
+    }
+}
+
+#pwa_app_register{
+    cursor: pointer;
+    color: orangered;
+    font-size: 16px;
+    transition: @default_transition;
+    &:hover, &:focus{
+        text-decoration: underline;
+        transition: @default_transition;
+    }
+}
+
+.pwa_app_register_form_popup_wrapper{
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    & > .pwa_app_register_form_popup_overlay{
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .75);
+    }
+    & > .pwa_app_register_form_popup_close{
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-weight: 900;
+        font-size: 18px;
+        padding: 15px;
+        background-color: @default_link_color;
+        color: @default_headers_color;
+        border-radius: @default_border_radius;
+        cursor: pointer;
+    }
+    & > *:not(.pwa_app_register_form_popup_overlay){
+        z-index: 2;
+    }
+    & > #pwa_app_register_form{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

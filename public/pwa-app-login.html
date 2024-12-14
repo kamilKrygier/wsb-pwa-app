@@ -1,0 +1,48 @@
+<div class="pwa_app_login_form_wrapper">
+
+    <h1>Formularz logowania</h1>
+
+    <form id="pwa_app_login_form" action="/login" method="post">
+
+        <label> Podaj email
+            <input name="pwa_app_user_mail" type="email" placeholder="Podaj hasło" required>
+        </label>
+    
+        <label> Podaj hasło
+            <input name="pwa_app_user_password" type="password" placeholder="Podaj hasło" required>
+        </label>
+    
+        <input type="submit" value="Zaloguj się" class="btn">
+
+        <div id="pwa_app_register">Zarejestruj się</div>
+    
+    </form>
+
+</div>
+
+<div class="pwa_app_register_form_popup_wrapper">
+
+    <div class="pwa_app_register_form_popup_overlay"></div>
+    <div class="pwa_app_register_form_popup_close">Zamknij popup</div>
+
+    <form id="pwa_app_register_form" action="/register" method="post">
+
+        <h2>Formularz rejestracji</h2>
+
+        <label> Podaj email
+            <input name="pwa_app_register_user_mail" type="email" placeholder="Podaj email" required>
+        </label>
+    
+        <label> Podaj hasło
+            <input name="pwa_app_register_user_password" type="password" placeholder="Podaj hasło" required>
+        </label>
+
+        <label> Powtórz hasło
+            <input name="pwa_app_register_user_repeat_password" type="password" placeholder="Powtórz hasło" required>
+        </label>
+    
+        <input type="submit" value="Zaloguj się" class="btn">
+    
+    </form>
+
+</div>

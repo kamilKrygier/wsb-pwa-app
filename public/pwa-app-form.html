@@ -1,0 +1,42 @@
+<div id="pwa_app_logout" class="pwa_app_logout">Wyloguj</div>
+
+<h1>Aplikacja do zarządzania finansami</h1>
+
+<p>Dodaj przychód lub wydatek, aby następnie móc podejrzeć statystyki.</p>
+
+<hr>
+
+<div class="section">
+
+    <form id="pwa_form_income_and_costs" action="/">
+
+        <label> Nazwa wydatku/przychodu:
+            <input type="text" name="pwa_input_name" placeholder="Podaj nazwę wydatku/przychodu">
+        </label>
+
+        <label> Wielkość wydatku/przychodu:
+            <input type="number" min="0" name="pwa_input_money_quantity" placeholder="Wprowadź kwotę">
+        </label>
+
+        <label> Wybierz, czy to wydatek lub przychód:
+            <select name="pwa_input_type">
+                <option value="income">Przychód</option>
+                <option value="cost">Wydatek</option>
+            </select>
+        </label>
+
+        <input type="submit" value="ZAPISZ" class="btn">
+
+    </form>
+
+
+    <table id="pwa_table_income_and_costs" cellspacing="0">
+        <tr>
+            <th>Nazwa wydatku/przychodu</th>
+            <th>Typ</th>
+            <th>Wielkość wydatku/przychodu</th>
+            <th>Usuń wiersz?</th>
+        </tr>
+    </table>
+    
+</div>
