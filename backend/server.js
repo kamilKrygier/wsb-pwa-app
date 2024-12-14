@@ -6,7 +6,6 @@ const bcrypt = require('bcrypt')
 const User = require('./schemas/user_schema.js')
 const Subscription = require('./schemas/subscription_schema.js')
 const IncomeOrCost = require('./schemas/income_or_cost_schema.js')
-const fs = require('fs')
 const https = require('https')
 const webPush = require('web-push')
 
@@ -18,11 +17,6 @@ webPush.setVapidDetails(
     public_vapid_key,
     private_vapid_key
 )  
-
-const options = {
-    key: fs.readFileSync('C:/xampp/apache/conf/ssl.key/localhost-key.pem'),
-    cert: fs.readFileSync('C:/xampp/apache/conf/ssl.crt/localhost.pem')
-}
 
 const app = express()
 const PORT = 3000
@@ -216,6 +210,10 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/index.html'))
 })
 
-https.createServer(options, app).listen(PORT, () => {
-    console.log(`Server is running on https://localhost:${PORT}`)
-})
+app.listen(PORT, () => {
+    console.log(`App is running on http://localhost:${PORT}`);
+});
+
+// https.createServer(options, app).listen(PORT, () => {
+//     console.log(`Server is running on https://localhost:${PORT}`)
+// })
